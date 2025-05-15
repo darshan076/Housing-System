@@ -13,32 +13,32 @@ public class HousingController {
     @Autowired
     HouseService service;
 
-    @PostMapping("saveAll")
+    @PostMapping("save-all")
     public void saveAll(@RequestBody List<HouseDetails> h){
         service.saveAllHouse(h);
     }
 
-    @GetMapping("avgAll")
+    @GetMapping("avg-all")
     public double avgAll(){
         return service.avgAll();
     }
 
-    @GetMapping("avgAllLoc")
+    @GetMapping("avg-all-loc")
     public List<Double> avgAllLoc(){
         return service.avgAllLoc();
     }
 
-    @GetMapping("maxPrice")
+    @GetMapping("max-price")
     public double maxPrice(){
         return service.maxPrice();
     }
 
-    @GetMapping("minPrice")
+    @GetMapping("min-price")
     public double minPrice(){
         return service.minPrice();
     }
 
-    @GetMapping("avgByLoc/{location}")
+    @GetMapping("avg-by-loc/{location}")
     public double avgByLoc(@PathVariable String location){
         return service.avgByLoc(location);
     }
